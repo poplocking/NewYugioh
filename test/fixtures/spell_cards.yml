@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spell_Id: 1
+  name: MyString
+  description: MyString
+  attribute: one
+  race: one
+  type: one
+
+two:
+  spell_Id: 1
+  name: MyString
+  description: MyString
+  attribute: two
+  race: two
+  type: two
