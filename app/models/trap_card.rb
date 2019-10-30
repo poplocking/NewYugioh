@@ -7,4 +7,8 @@ class TrapCard < ApplicationRecord
   has_and_belongs_to_many :type
   has_and_belongs_to_many :race
   has_and_belongs_to_many :attribute
+
+  validates :name, presence: true
+  validates :description, presence: true
+
 end

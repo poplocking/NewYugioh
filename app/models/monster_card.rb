@@ -7,4 +7,7 @@ class MonsterCard < ApplicationRecord
   has_and_belongs_to_many :race
   has_and_belongs_to_many :attribute
 
+  validates :name, presence: true
+  validates :atk, presence: true, numericality: { only_float: true }
+  validates :def, presence: true, numericality: { only_float: true }
 end
