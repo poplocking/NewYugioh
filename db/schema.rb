@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_30_173617) do
+ActiveRecord::Schema.define(version: 2019_10_31_041714) do
 
   create_table "attributes", force: :cascade do |t|
     t.integer "attribute_Id"
@@ -29,13 +29,9 @@ ActiveRecord::Schema.define(version: 2019_10_30_173617) do
     t.integer "scale"
     t.integer "linkval"
     t.integer "attribute_id"
-    t.integer "race_id", null: false
-    t.integer "type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["attribute_id"], name: "index_monster_cards_on_attribute_id"
-    t.index ["race_id"], name: "index_monster_cards_on_race_id"
-    t.index ["type_id"], name: "index_monster_cards_on_type_id"
   end
 
   create_table "races", force: :cascade do |t|
@@ -80,8 +76,6 @@ ActiveRecord::Schema.define(version: 2019_10_30_173617) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "monster_cards", "races"
-  add_foreign_key "monster_cards", "types"
   add_foreign_key "spell_cards", "attributes"
   add_foreign_key "spell_cards", "races"
   add_foreign_key "spell_cards", "types"

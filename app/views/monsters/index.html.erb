@@ -1,2 +1,5 @@
-<h1>Monsters#index</h1>
-<p>Find me in app/views/monsters/index.html.erb</p>
+<h1>Monster Card</h1>
+
+<% @monsters.each do |monster| %>
+  <h2><%=  monster.name %></h2>
+ <% end%>

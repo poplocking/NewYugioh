@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# frozen_string_literal: true
+
+require 'json'
+
+MonsterCard.destroy_all
+
+json_from_file = File.read(Rails.root.join('db', 'cardinfo.json'))
+hash = JSON.parse(json_from_file)
+
+hash.each do |cards|
+  MonsterCard.create(
+    name: cards['name']
+  )
+end
+puts "generated #{MonsterCard.count} cards"
