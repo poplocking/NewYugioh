@@ -8,4 +8,6 @@ class MonstersController < ApplicationController
   def show
     @monsters = MonsterCard.find(params[:id])
   end
+
+  def search_results; end
 end
