@@ -1,5 +1,6 @@
 <h1>Monster Card</h1>
 
 <% @monsters.each do |monster| %>
-  <h2><%=  monster.name %></h2>
+  <h2><%= link_to monster.name %></h2>
+  <p><%= monster.description %> </p>
  <% end%>

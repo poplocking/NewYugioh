@@ -9,7 +9,8 @@ hash = JSON.parse(json_from_file)
 
 hash.each do |cards|
   MonsterCard.create(
-    name: cards['name']
+    name: cards['name'],
+    description: cards['desc']
   )
 end
 puts "generated #{MonsterCard.count} cards"

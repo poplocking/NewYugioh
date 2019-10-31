@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_31_041714) do
+ActiveRecord::Schema.define(version: 2019_10_31_063008) do
 
   create_table "attributes", force: :cascade do |t|
     t.integer "attribute_Id"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 2019_10_31_041714) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["attribute_id"], name: "index_monster_cards_on_attribute_id"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "permalink"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "races", force: :cascade do |t|
